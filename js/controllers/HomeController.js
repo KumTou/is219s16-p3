@@ -88,7 +88,51 @@ app.controller('HomeController', ['$scope', function($scope) {
       likes:	812,
       dislikes:	101,
       posterindex: 0
+	},
+	{ 
+      title:	'The Lord of the Rings: The Fellowship of the Ring', 
+      iscore:	8.8,
+      rating:	'PG-13',
+      runtime:	178,
+      released:	new Date('2001', '12', '19'),
+      country:	'USA',
+      posters:	['img/LOTR1_1.jpg','img/LOTR1_2.jpg'],
+      imdb:		'http://www.imdb.com/title/tt0120737',
+      website:	'http://www.lordoftherings.net/',
+      likes:	9500,
+      dislikes:	5,
+      posterindex: 0
+	},
+	{ 
+      title:	'The Lord of the Rings: The Two Towers', 
+      iscore:	8.7,
+      rating:	'PG-13',
+      runtime:	179,
+      released:	new Date('2002', '12', '18'),
+      country:	'USA',
+      posters:	['img/LOTR2_1.jpg','img/LOTR2_2.jpg'],
+      imdb:		'http://www.imdb.com/title/tt0167261',
+      website:	'http://www.lordoftherings.net/',
+      likes:	7125,
+      dislikes:	10,
+      posterindex: 0
+	},
+	{ 
+      title:	'The Lord of the Rings: The Return of the King', 
+      iscore:	8.9,
+      rating:	'PG-13',
+      runtime:	201,
+      released:	new Date('2003', '12', '17'),
+      country:	'USA',
+      posters:	['img/LOTR3_1.jpg','img/LOTR3_2.jpg'],
+      imdb:		'http://www.imdb.com/title/tt0167260',
+      website:	'http://www.lordoftherings.net/',
+      likes:	5002,
+      dislikes:	2,
+      posterindex: 0
 	}
+	
+	
 	
 	
   ];
@@ -107,8 +151,7 @@ app.controller('HomeController', ['$scope', function($scope) {
 	
 	
 	/* ADD FUNCTIONS FOR STEP 7 HERE */
-		
-	$scope.like = function(index){
+		$scope.like = function(index){
 			$scope.movies[index].likes += 1;
 		};
 		
@@ -129,8 +172,6 @@ app.controller('HomeController', ['$scope', function($scope) {
 		$scope.timeText = function(minutes){
 			return (Math.floor(minutes/60) + "h " + minutes % 60 + "m");
 		};
-	
-	
 	
 	
 	
