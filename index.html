@@ -33,11 +33,11 @@
     <div class="main">
       
       <div class="container">
-
+		<div ng-repeat="movie in movies">
         <div class="col-md-6"> 
             <div class="thumbnail">
 
-					<img class="poster" ng-src="{{movie.posters[movie.posterindex]}}"/>
+					<img class="poster" ng-src="{{movie.posters[movie.posterindex]}}" ng-click="posterClick($index)"/>
 					<div class="imageInfo">{{movie.posterindex + 1}} of {{movie.posters.length}}</div>
 					
 					<p class="title">{{movie.title}} ({{movie.country}})</p> 
@@ -47,18 +47,18 @@
 					<p class="websites">Websites: <a ng-href ="{{movie.imdb}}" target="_blank">IMDB</a> | <a ng-href="{{movie.website}}" target="_blank">Official Website</a></p>
 					
 		            <div class="social">
-		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.likes}}</p>
-		              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislikes}}</p>
+		              <p class="likes" ng-click="like($index)"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.likes}}</p>
+		              <p class="dislikes" ng-click="dislike($index)"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislikes}}</p>
 		            </div>
             </div> 
         </div>
-
+		</div>
       </div>
     </div>
 
     <div class="footer">
       <div class="container">
-		<a id="github" class="btn btn-lg btn-warning">
+		<a id="github" class="btn btn-lg btn-warning" ng-href="{{github}} target="_blank">
 			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> {{owner}} {{github}}
   		</a>
       </div>
